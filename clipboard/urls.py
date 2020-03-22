@@ -16,6 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from apiv1.views import TextCreate, TextList
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('create/', TextCreate.as_view()),
+    path('', TextList.as_view())
 ]
